@@ -47,7 +47,7 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="mt-10 max-w-xl text-xs leading-5 text-slate-500">
+        <p className="mt-10 max-w-xl text-xs leading-5 text-slate-400">
           AI guidance is intended to support your thinking, not make decisions
           for you. For important decisions, consider relevant professional
           advice.
