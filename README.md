@@ -485,10 +485,3 @@ AI Decision Companion is a decision-support tool.
 
 AI-generated analysis may contain errors, assumptions, or incomplete information. Users should consider the analysis as one input into their decision-making process and remain responsible for their final decisions.
 
-Author
-
-Ushna Kamran
-
-Computer Science Student
-
-LinkedIn: www.linkedin.com/in/ushna-kamran
