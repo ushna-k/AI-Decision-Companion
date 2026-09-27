@@ -5,13 +5,13 @@ An AI-powered decision-support web application that helps users compare two opti
 ## Live Application
 
 **Production URL:**  
-[PASTE YOUR VERCEL URL HERE]
+https://ai-decision-companion.vercel.app/
 
-## GitHub Repository
+## GitHub Repository 
 
 **Repository:**  
-[PASTE YOUR GITHUB REPOSITORY URL HERE]
 
+https://github.com/ushna-k/AI-Decision-Companion.git
 ---
 
 ## Project Brief
@@ -491,6 +491,4 @@ Ushna Kamran
 
 Computer Science Student
 
-GitHub: [PASTE YOUR GITHUB PROFILE URL HERE]
-
-LinkedIn: [PASTE YOUR LINKEDIN URL HERE]
+LinkedIn: www.linkedin.com/in/ushna-kamran
