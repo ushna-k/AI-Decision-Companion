@@ -24,11 +24,9 @@ AI Decision Companion is a small AI-enhanced frontend application designed to he
 
 ### Decision Form
 
-Add a screenshot of the main Decision Companion form here.
+![AI Decision Companion decision form](screenshots/decision-form.png)
 
-```md
-![AI Decision Companion decision form](./screenshots/decision-form.png)
-```
+> Place the screenshots in a `screenshots/` folder in the project repository.
 
 ---
 
