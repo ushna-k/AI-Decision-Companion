@@ -2,6 +2,8 @@ import { google } from "@ai-sdk/google";
 import { generateObject } from "ai";
 import { z } from "zod";
 
+export const maxDuration = 30;
+
 const requestSchema = z.object({
   decision: z
     .string()
