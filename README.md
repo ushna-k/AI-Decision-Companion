@@ -205,9 +205,15 @@ This makes the AI capability directly connected to the purpose of the applicatio
 
 ## Model
 
-The application uses Google Gemini through the Google Generative AI integration.
+The application uses Google Gemini through the `@ai-sdk/google` provider and the Vercel AI SDK.
 
-The model is configured in the server-side API route.
+The current model configured for the application is:
+
+```text
+gemini-flash-lite-latest
+```
+
+This model was selected after testing multiple available Gemini Flash models. Some other Flash models returned temporary `503 UNAVAILABLE` high-demand responses during development, while `gemini-flash-lite-latest` successfully handled repeated structured analysis requests.
 
 The API key is stored as an environment variable and is not exposed to the frontend.
 
@@ -285,7 +291,7 @@ The API key is not exposed to the frontend and should never be committed to GitH
 
 ## Request Protection
 
-The AI API route includes input limits to reduce unnecessary or abusive requests:
+The AI API route includes input limits to constrain request size and reduce unnecessary processing:
 
 | Field | Maximum length |
 |---|---:|
@@ -304,9 +310,7 @@ maxRetries: 0
 
 This prevents temporary AI failures from automatically triggering repeated requests.
 
-These measures provide basic protection against trivial API-credit abuse while keeping the application simple.
-
----
+These measures provide basic request protection while keeping the application simple. The application does not currently implement dedicated rate limiting.
 
 # Error Handling & Resilience
 
@@ -725,7 +729,7 @@ A future production version could add dedicated error monitoring and analytics.
 - The application currently compares two options rather than supporting an unlimited number of alternatives.
 - Safari and mobile Safari were not directly tested in the Windows development environment.
 - Lighthouse development-mode results can be affected by development tooling and should be validated against the production build.
-
+- AI model availability can vary by provider and account. During development, several Gemini Flash models returned temporary `503 UNAVAILABLE` high-demand responses, so the application uses `gemini-flash-lite-latest`, which was successfully verified through repeated local and production tests.
 ---
 
 # Future Improvements
