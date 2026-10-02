@@ -80,7 +80,7 @@ export async function POST(request: Request) {
     }
 
     const result = await generateObject({
-  model: google("gemini-3.8-flash"),
+  model: google("gemini-flash-lite-latest"),
   maxRetries: 0,
 
       schema: decisionSchema,

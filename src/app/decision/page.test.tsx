@@ -21,6 +21,7 @@ vi.mock("next/link", () => ({
 describe("AI Decision Companion", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
+    vi.unstubAllGlobals();
   });
 
   it("renders the decision form correctly", () => {
@@ -129,6 +130,12 @@ describe("AI Decision Companion", () => {
       "fetch",
       vi.fn().mockResolvedValue({
         ok: true,
+        headers: {
+          get: (name: string) =>
+            name.toLowerCase() === "content-type"
+              ? "application/json"
+              : null,
+        },
         json: async () => mockAnalysis,
       })
     );
@@ -169,8 +176,8 @@ describe("AI Decision Companion", () => {
     );
 
     expect(
-  await screen.findByText("AI Decision Analysis")
-).toBeInTheDocument();
+      await screen.findByText("AI Decision Analysis")
+    ).toBeInTheDocument();
 
     expect(
       screen.getByText(mockAnalysis.recommendation)

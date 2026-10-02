@@ -101,14 +101,30 @@ export default function DecisionPage() {
         }),
       });
 
-      const data = await response.json();
+      const contentType = response.headers.get("content-type") || "";
 
       if (!response.ok) {
+        if (contentType.includes("application/json")) {
+          const errorData = await response.json();
+
+          throw new Error(
+            errorData?.error ||
+            "The AI service is temporarily unavailable. Please try again in a moment."
+          );
+        }
+
         throw new Error(
-          data?.error ||
-            "We couldn't analyze your decision right now. Please try again."
+          "The AI service is temporarily unavailable. Please try again in a moment."
         );
       }
+
+      if (!contentType.includes("application/json")) {
+        throw new Error(
+          "The AI service returned an unexpected response. Please try again."
+        );
+      }
+
+      const data = await response.json();
 
       setResult({
         ...data,
